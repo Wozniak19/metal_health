@@ -1,6 +1,6 @@
 # metal_health
 
-A new Flutter project.
+A new Flutter project that detects and classifies Mental Health Disorders in humans using Machine learning techniques.
 
 ## Getting Started
 
