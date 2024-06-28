@@ -1,16 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:metal_health/pages/diagnosis_pages/acute_and_transient.dart';
-import 'package:metal_health/pages/diagnosis_pages/anxiety.dart';
-import 'package:metal_health/pages/diagnosis_pages/bipolar_disorder.dart';
-import 'package:metal_health/pages/diagnosis_pages/delusional_disorder.dart';
-import 'package:metal_health/pages/diagnosis_pages/depression.dart';
-import 'package:metal_health/pages/diagnosis_pages/gambling.dart';
-import 'package:metal_health/pages/diagnosis_pages/ocd.dart';
-import 'package:metal_health/pages/diagnosis_pages/ptsd.dart';
-import 'package:metal_health/pages/diagnosis_pages/schizophrenia.dart';
-import 'package:metal_health/pages/diagnosis_pages/substance_use_and_abuse.dart';
+import 'package:metal_health/pages/main_pages/allpages.dart';
 
 class Questionnaire extends StatefulWidget {
   const Questionnaire({super.key});

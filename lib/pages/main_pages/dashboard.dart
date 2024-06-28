@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:metal_health/pages/main_pages/analysis.dart';
-import 'package:metal_health/pages/main_pages/home_page.dart';
-import 'package:metal_health/pages/main_pages/patient_form.dart';
-import 'package:metal_health/pages/main_pages/questionnaire.dart';
-import 'package:metal_health/pages/main_pages/report.dart';
-import 'package:metal_health/pages/main_pages/treatment.dart';
+import 'package:metal_health/pages/main_pages/allpages.dart';
 import 'package:metal_health/utils/reusable_card.dart';
 import 'package:metal_health/utils/icon_content.dart';
 
