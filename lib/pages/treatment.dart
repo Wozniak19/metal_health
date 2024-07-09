@@ -8,10 +8,10 @@ class Treatment extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Treatment Page'),
+          title: const Text('Treatment Page'),
           backgroundColor: Colors.grey.shade200,
         ),
-        body: Center(
+        body: const Center(
           child: Text('Testing the Treatment Page'),
         ));
   }

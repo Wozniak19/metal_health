@@ -18,3 +18,5 @@ export 'ocd.dart';
 export 'ptsd.dart';
 export 'report.dart';
 export 'treatment.dart';
+export 'auth.dart';
+export 'splash.dart';

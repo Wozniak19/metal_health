@@ -1,13 +1,11 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, sort_child_properties_last
-// import 'package:metal_health/utils/doctor_card.dart';
-// import 'package:metal_health/pages/patient_form.dart';
-// import 'package:metal_health/pages/patient_form.dart';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:metal_health/utils/customField.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:metal_health/utils/carousel_card.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -54,7 +52,7 @@ class _HomePageState extends State<HomePage> {
       mhd_Cases: 88,
     ),
   ];
-
+  List<Widget> pages = [];
   int selectedIndex = 0;
   void _navigateBottomBar(int index) {
     setState(() {
@@ -117,15 +115,18 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
 
-                  //profile pic
+                  //signout side
                   Container(
                     padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: Colors.deepPurple.shade100,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Icon(
-                      Icons.person,
+                    child: IconButton(
+                      onPressed: () {
+                        FirebaseAuth.instance.signOut();
+                      },
+                      icon: Icon(Icons.exit_to_app),
                     ),
                   )
                 ],

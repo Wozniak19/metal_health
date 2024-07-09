@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "965640393594",
+    "project_id": "mhdsapp",
+    "storage_bucket": "mhdsapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965640393594:android:66a1fc5c11ff3b5f4efcc3",
+        "android_client_info": {
+          "package_name": "com.example.metal_health"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLP2BF-U0FmE_ebBzlUx4tjijgJ-bT-To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:metal_health/pages/main_pages/allpages.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:metal_health/pages/allpages.dart';
 import 'package:metal_health/utils/reusable_card.dart';
 import 'package:metal_health/utils/icon_content.dart';
 
@@ -61,16 +62,18 @@ class _DashState extends State<Dash> {
                       )
                     ],
                   ),
-                  //profile pic
+                  //signout side
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: Colors.deepPurple.shade100,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Icon(
-                      Icons.person,
-                    ),
+                    child: IconButton(
+                        onPressed: () {
+                          FirebaseAuth.instance.signOut();
+                        },
+                        icon: Icon(Icons.exit_to_app)),
                   )
                 ],
               ),

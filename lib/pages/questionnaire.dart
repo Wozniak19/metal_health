@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:metal_health/pages/main_pages/allpages.dart';
+import 'package:metal_health/pages/allpages.dart';
 
 class Questionnaire extends StatefulWidget {
   const Questionnaire({super.key});
