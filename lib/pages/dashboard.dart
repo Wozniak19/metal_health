@@ -88,7 +88,7 @@ class _DashState extends State<Dash> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const HomePage(),
+                              builder: (context) => const Home(),
                             ),
                           );
                         });

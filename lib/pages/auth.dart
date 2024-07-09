@@ -47,7 +47,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(200, 13, 32, 14),
+      backgroundColor: const Color(0x000f1d1b),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -62,7 +62,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
                 width: 200,
                 child: Image.asset(
-                  'assets/images/mental111.jpg',
+                  'assets/images/mental12.png',
                 ),
               ),
               Card(

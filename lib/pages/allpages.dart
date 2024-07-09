@@ -20,3 +20,4 @@ export 'report.dart';
 export 'treatment.dart';
 export 'auth.dart';
 export 'splash.dart';
+export 'home.dart';

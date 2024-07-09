@@ -52,36 +52,11 @@ class _HomePageState extends State<HomePage> {
       mhd_Cases: 88,
     ),
   ];
-  List<Widget> pages = [];
-  int selectedIndex = 0;
-  void _navigateBottomBar(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.black,
-        backgroundColor: Colors.deepPurple[200],
-        currentIndex: selectedIndex,
-        onTap: _navigateBottomBar,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard_rounded), label: 'Dashboard'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.book), label: 'Questionnaire'),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Patients'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.analytics), label: 'Analysis'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings), label: 'Settings'),
-        ],
-      ),
       body: SafeArea(
         child: Column(
           //App bar
@@ -231,9 +206,10 @@ class _HomePageState extends State<HomePage> {
             ),
             //Graph Area
             Expanded(
-                child: Container(
-              color: Colors.white,
-            ))
+              child: Container(
+                color: Colors.white,
+              ),
+            )
           ],
         ),
       ),
