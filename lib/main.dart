@@ -22,14 +22,7 @@ class MentalHealth extends StatefulWidget {
 }
 
 class _MentalHealthState extends State<MentalHealth> {
-  // final List<Widget> _pages = [
-  //   Dashboard(),
-  //   Questionnaire(),
-  //   Patient(),
-  //   Analysis(),
-  //   Settings(),
-  // ];
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
