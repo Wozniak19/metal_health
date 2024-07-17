@@ -6,6 +6,9 @@ import 'package:metal_health/utils/customField.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:metal_health/utils/carousel_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+final _firebase = FirebaseAuth.instance;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -53,6 +56,28 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
+  String? _username;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    User currentUser = _firebase.currentUser!;
+    DocumentSnapshot userDoc = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(currentUser.uid)
+        .get();
+
+    setState(() {
+      _username = userDoc['username'];
+      _isLoading = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                         height: 8,
                       ),
                       Text(
-                        'Doc Mills',
+                        'Doc $_username',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
