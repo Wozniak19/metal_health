@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CustomField extends StatelessWidget {
-  const CustomField({super.key, required this.hint, required this.selectedIcon});
+class customField extends StatelessWidget {
+  const customField(
+      {super.key, required this.hint, required this.selectedIcon});
 
   final String hint;
   final Icon selectedIcon;

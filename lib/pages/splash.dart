@@ -7,18 +7,18 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Chat'),
+        title: const Text('Flutter Chat'),
         actions: [
           IconButton(
             onPressed: () {
               FirebaseAuth.instance.signOut();
             },
-            icon: Icon(Icons.exit_to_app),
+            icon: const Icon(Icons.exit_to_app),
             color: Theme.of(context).colorScheme.primary,
           )
         ],
       ),
-      body: Center(
+      body: const Center(
         child: Text('Loading..... '),
       ),
     );

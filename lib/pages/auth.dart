@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 final _firebase = FirebaseAuth.instance;
 
@@ -15,6 +16,9 @@ class _AuthScreenState extends State<AuthScreen> {
   var _isLogin = true;
   var _enteredEmail = '';
   var _enteredPassword = '';
+  var _enteredFirstName = '';
+  var _enteredLastName = '';
+  var _isPasswordVisible = false;
 
   void _submit() async {
     final isValid = _formKey.currentState!.validate();
@@ -30,10 +34,25 @@ class _AuthScreenState extends State<AuthScreen> {
       } else {
         final userCredentials = await _firebase.createUserWithEmailAndPassword(
             email: _enteredEmail, password: _enteredPassword);
+
+        final username = _enteredFirstName[0].toUpperCase() +
+            "." +
+            _enteredLastName[0].toUpperCase() +
+            _enteredLastName.substring(1).toLowerCase();
+
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(userCredentials.user!.uid)
+            .set({
+          'username': username,
+          'email': _enteredEmail,
+          'firstName': _enteredFirstName,
+          'lastName': _enteredLastName,
+        });
       }
     } on FirebaseAuthException catch (error) {
       if (error.code == 'email-already-in-use') {
-//...
+        //...
       }
       ScaffoldMessenger.of(context).clearSnackBars();
       ScaffoldMessenger.of(context).showSnackBar(
@@ -47,7 +66,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0x00fff3e0),
+      backgroundColor: Color.fromARGB(43, 58, 196, 4),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -76,6 +95,38 @@ class _AuthScreenState extends State<AuthScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           TextFormField(
+                            decoration:
+                                const InputDecoration(labelText: 'First Name'),
+                            keyboardType: TextInputType.name,
+                            autocorrect: false,
+                            textCapitalization: TextCapitalization.words,
+                            validator: (value) {
+                              if (value == null || value.trim().isEmpty) {
+                                return 'Please enter a first name.';
+                              }
+                              return null;
+                            },
+                            onSaved: (value) {
+                              _enteredFirstName = value!;
+                            },
+                          ),
+                          TextFormField(
+                            decoration:
+                                const InputDecoration(labelText: 'Last Name'),
+                            keyboardType: TextInputType.name,
+                            autocorrect: false,
+                            textCapitalization: TextCapitalization.words,
+                            validator: (value) {
+                              if (value == null || value.trim().isEmpty) {
+                                return 'Please enter a last name.';
+                              }
+                              return null;
+                            },
+                            onSaved: (value) {
+                              _enteredLastName = value!;
+                            },
+                          ),
+                          TextFormField(
                             decoration: const InputDecoration(
                                 labelText: 'Email Address'),
                             keyboardType: TextInputType.emailAddress,
@@ -85,7 +136,7 @@ class _AuthScreenState extends State<AuthScreen> {
                               if (value == null ||
                                   value.trim().isEmpty ||
                                   !value.contains('@')) {
-                                return 'please enter a valid email address.';
+                                return 'Please enter a valid email address.';
                               }
                               return null;
                             },
@@ -94,12 +145,23 @@ class _AuthScreenState extends State<AuthScreen> {
                             },
                           ),
                           TextFormField(
-                            decoration:
-                                const InputDecoration(labelText: 'Password'),
-                            obscureText: true,
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              suffixIcon: IconButton(
+                                icon: Icon(_isPasswordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off),
+                                onPressed: () {
+                                  setState(() {
+                                    _isPasswordVisible = !_isPasswordVisible;
+                                  });
+                                },
+                              ),
+                            ),
+                            obscureText: !_isPasswordVisible,
                             validator: (value) {
                               if (value == null || value.trim().length < 6) {
-                                return 'password must be at least 6 characters long.';
+                                return 'Password must be at least 6 characters long.';
                               }
                               return null;
                             },

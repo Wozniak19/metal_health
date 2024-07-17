@@ -43,7 +43,7 @@ class _MentalHealthState extends State<MentalHealth> {
         '/dashboardpage': (context) => Dashboard(),
         '/homepage': (context) => HomePage(),
         '/questionnairepage': (context) => Questionnaire(),
-        '/patientpage': (context) => Patient(),
+        '/patientpage': (context) => MyFormPage(),
         '/analysispage': (context) => Analysis(),
         '/settingspage': (context) => AppSettings(),
         '/depressionpage': (context) => Depression(),

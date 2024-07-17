@@ -10,11 +10,11 @@ class Home extends StatefulWidget {
 
 int _currentIndex = 0;
 List<Widget> pages = [
-  HomePage(),
-  Questionnaire(),
-  Patient(),
+  const HomePage(),
+  const Questionnaire(),
+  const MyFormPage(),
   Analysis(),
-  AppSettings(),
+  const AppSettings(),
 ];
 
 class _HomeState extends State<Home> {

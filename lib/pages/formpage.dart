@@ -4,6 +4,8 @@ import 'package:intl/intl.dart'; // For date formatting
 import 'package:cloud_firestore/cloud_firestore.dart'; // For Firebase Firestore
 
 class MyFormPage extends StatefulWidget {
+  const MyFormPage({super.key});
+
   @override
   _MyFormPageState createState() => _MyFormPageState();
 }
@@ -26,7 +28,7 @@ class _MyFormPageState extends State<MyFormPage> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.grey.shade200,
-        title: Text(
+        title: const Text(
           'Patient Form',
           style: TextStyle(
             color: Colors.black,
@@ -44,13 +46,13 @@ class _MyFormPageState extends State<MyFormPage> {
                 labelText: 'First Name',
                 icon: Icons.person,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _buildTextField(
                 controller: _lastNameController,
                 labelText: 'Last Name',
                 icon: Icons.person,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               DropdownButtonFormField<String>(
                 value: _selectedGender,
                 decoration: InputDecoration(
@@ -80,7 +82,7 @@ class _MyFormPageState extends State<MyFormPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _buildTextField(
                 controller: _emailController,
                 labelText: 'Email',
@@ -94,7 +96,7 @@ class _MyFormPageState extends State<MyFormPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ListTile(
                 tileColor: Colors.deepPurple[100],
                 shape: RoundedRectangleBorder(
@@ -105,28 +107,28 @@ class _MyFormPageState extends State<MyFormPage> {
                       ? 'Select Date of Birth'
                       : 'Date of Birth: ${DateFormat.yMd().format(_selectedDate!)}',
                 ),
-                leading: Icon(Icons.calendar_month),
+                leading: const Icon(Icons.calendar_month),
                 onTap: _pickDate,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _buildReadOnlyField(
                 labelText: 'Age',
                 icon: Icons.cake,
                 value: _age?.toString() ?? '',
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _buildTextField(
                 controller: _addressController,
                 labelText: 'Address',
                 icon: Icons.location_on,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _buildTextField(
                 controller: _patientIdController,
                 labelText: 'Patient ID',
                 icon: Icons.camera_front_rounded,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _buildTextField(
                 controller: _phoneNumberController,
                 labelText: 'Phone Number',
@@ -143,16 +145,16 @@ class _MyFormPageState extends State<MyFormPage> {
                   LengthLimitingTextInputFormatter(10),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: _submitForm,
-                child: Text('Submit'),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
                 ),
+                child: const Text('Submit'),
               ),
             ],
           ),
@@ -281,7 +283,7 @@ class _MyFormPageState extends State<MyFormPage> {
 
 // Show a success message
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Form submitted successfully!')),
+          const SnackBar(content: Text('Form submitted successfully!')),
         );
       }).catchError((error) {
         // Show an error message

@@ -4,7 +4,8 @@ class RadioButton extends StatefulWidget {
   final String bigTitle;
   final String question;
 
-  const RadioButton({super.key, 
+  const RadioButton({
+    super.key,
     required this.bigTitle,
     required this.question,
   });
@@ -25,23 +26,32 @@ class _RadioButtonState extends State<RadioButton> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              widget.bigTitle,
-              overflow: TextOverflow.ellipsis,
-              maxLines: null,
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                widget.bigTitle,
+                overflow: TextOverflow.ellipsis,
+                maxLines: null,
+                softWrap: true,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 2, top: 10),
               child: Row(
                 children: [
-                  Text(
-                    widget.question,
-                    style: const TextStyle(color: Colors.black, fontSize: 15),
+                  Flexible(
+                    child: Text(
+                      widget.question,
+                      overflow: TextOverflow.visible,
+                      maxLines: null,
+                      softWrap: true,
+                      style: const TextStyle(color: Colors.black, fontSize: 15),
+                    ),
                   ),
                 ],
               ),

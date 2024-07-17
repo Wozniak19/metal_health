@@ -5,8 +5,15 @@ class Report extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('Testing the report page'),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('Report Page'),
+        backgroundColor: Colors.grey.shade200,
+      ),
+      body: const Center(
+        child: Text('Testing the report page'),
+      ),
     );
   }
 }

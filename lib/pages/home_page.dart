@@ -188,7 +188,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //search bar
-            CustomField(
+            customField(
               hint: 'how can we help',
               selectedIcon: Icon(Icons.search),
             ),

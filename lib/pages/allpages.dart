@@ -4,7 +4,6 @@ export 'depression.dart';
 export 'login.dart';
 export 'questionnaire.dart';
 export 'home_page.dart';
-export 'patient_form.dart';
 export 'app_settings.dart.dart';
 export 'dashboard.dart';
 export 'signup.dart';
