@@ -49,7 +49,7 @@ class _BipolarState extends State<Bipolar> {
       Question(
           title: "Distractibility",
           question:
-              "Have you found it difficult to concentrate or been easily distractible?"),
+              "Have you found it difficult to concentrate or been easily distracted?"),
       Question(
           title: "Not due to substance use",
           question: "Have these symptoms occurred without being "

@@ -170,7 +170,7 @@ class _DashState extends State<Dash> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const Patient()));
+                                  builder: (context) => MyFormPage()));
                         });
                       },
                       child: ReUsableCard(

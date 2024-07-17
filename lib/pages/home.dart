@@ -14,7 +14,7 @@ List<Widget> pages = [
   Questionnaire(),
   Patient(),
   Analysis(),
-  Settings(),
+  AppSettings(),
 ];
 
 class _HomeState extends State<Home> {

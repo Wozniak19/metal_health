@@ -22,7 +22,6 @@ class MentalHealth extends StatefulWidget {
 }
 
 class _MentalHealthState extends State<MentalHealth> {
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -46,7 +45,7 @@ class _MentalHealthState extends State<MentalHealth> {
         '/questionnairepage': (context) => Questionnaire(),
         '/patientpage': (context) => Patient(),
         '/analysispage': (context) => Analysis(),
-        '/settingspage': (context) => Settings(),
+        '/settingspage': (context) => AppSettings(),
         '/depressionpage': (context) => Depression(),
       },
       theme: ThemeData(primarySwatch: Colors.deepPurple),

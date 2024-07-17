@@ -47,7 +47,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0x000f1d1b),
+      backgroundColor: const Color(0x00fff3e0),
       body: Center(
         child: SingleChildScrollView(
           child: Column(

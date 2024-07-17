@@ -6,7 +6,6 @@ import 'package:metal_health/utils/question_brain.dart';
 import 'package:metal_health/utils/radio_button.dart';
 import 'package:metal_health/question.dart';
 
-
 class Anxiety extends StatefulWidget {
   const Anxiety({super.key});
 
@@ -53,7 +52,7 @@ class _AnxietyState extends State<Anxiety> {
       Question(
           title: "Distractibility",
           question:
-              "Have you found it difficult to concentrate or been easily distractible?"),
+              "Have you found it difficult to concentrate or been easily distracted?"),
       Question(
           title: "Not due to substance use",
           question: "Have these symptoms occurred without being "
