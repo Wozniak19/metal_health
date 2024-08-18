@@ -15,65 +15,57 @@ class _BipolarState extends State<Bipolar> {
     questionBank: [
       // Your question list here (avoiding code duplication)
       Question(
-          title: "Prolonged heightened mood and activity",
-          question:
-              "Have you experienced a prolonged, heightened mood and increased "
-              "\nactivity lasting for over a week?"),
-      Question(
-          title: "Persistent risky behaviors",
-          question:
-              "Have you engaged in risky behaviors that persisted for over a week?"),
-      Question(
           title: "Flying thoughts",
           question:
-              "Have you had rapid or flying thoughts that you couldn't control?"),
+              "36. Have you experienced thoughts racing through your mind, making it difficult to focus on one thing at a time?"),
       Question(
-          title: "Reduced sleep",
+          title:
+              "Excessive involvement in activities that have a high potential for painful consequences",
           question:
-              "Have you noticed a significant reduction in your need for sleep?"),
+              "37. Have you found yourself excessively involved in activities that could lead to painful or harmful consequences, such as reckless spending or risky behaviors?"),
       Question(
-          title: "High-risk activities",
+          title:
+              "Mood disturbances(Talkativeness,Grandiosity,Distractibility,Reduced sleep,Irritability)",
           question:
-              "Have you been excessively involved in activities that have a "
-              "\nhigh potential for painful consequences?"),
+              "38. Have you experienced mood disturbances such as being excessively talkative, feeling grandiose, getting easily distracted, sleeping less, or feeling irritable? (Note: At least three should be present, or four if irritability is one of them.)"),
       Question(
-          title: "Talkativeness",
-          question: "Have you been more talkative than usual?"),
-      Question(
-          title: "Grandiosity",
+          title:
+              "Prolonged, heightened mood and increased activity for over a week",
           question:
-              "Have you felt an inflated sense of self-esteem or grandiosity?"),
+              "39. Have you experienced a heightened mood and increased activity level that lasted for over a week?"),
       Question(
-          title: "Depressed mood",
-          question: "Have you experienced periods of depressed mood?"),
-      Question(
-          title: "Distractibility",
+          title: "Severe mood disruption needing hospitalization",
           question:
-              "Have you found it difficult to concentrate or been easily distracted?"),
+              "40. Has your mood ever become so disruptive that it required hospitalization?"),
       Question(
-          title: "Not due to substance use",
-          question: "Have these symptoms occurred without being "
-              "\nattributable to the physiological effects of substance use?"),
-      Question(
-          title: "Severe mood disruption",
-          question: "Have you experienced severe mood disruptions?"),
-      Question(
-          title: "Duration over one week",
+          title: "Risky behaviours persist over a week",
           question:
-              "Have these mood disruptions lasted for longer than one week?"),
+              "41. Have you engaged in risky behaviors that persisted for more than a week?"),
       Question(
-          title: "Uncharacteristic change in functioning",
-          question: "Have you had an episode involving a clear change in "
-              "\nyour functioning that is uncharacteristic of you?"),
-      Question(
-          title: "Observable mood disturbance and change",
+          title:
+              "Not Attributable to the physiological effect of substance use",
           question:
-              "Have others observed the disturbance in your \nmood and change in functioning?"),
+              "42. Have your symptoms occurred without being caused by the effects of substance use, such as drugs or alcohol?"),
       Question(
-          title: "Less severe, psychosis if manic",
+          title: "Presence of pyschotic symptoms",
           question:
-              "Has the episode lacked the severity to impair your functioning \nsignificantly or require hospitalization? "
-              "\nIf there were any psychotic features, \nwere they during a manic episode?"),
+              "43. Have you experienced any psychotic symptoms, such as delusions or hallucinations, during your mood episodes?"),
+      Question(
+          title:
+              "The episode involves a clear change in functioning uncharacteristic of the individual.",
+          question:
+              "44. Have you noticed a clear change in your functioning during an episode that seems uncharacteristic of your usual self?"),
+      Question(
+          title:
+              "The disturbance in mood and the change in functioning are observable to others",
+          question:
+              "45. Have others noticed a disturbance in your mood and a change in your functioning?"),
+      Question(
+        title:
+            "Depressive episode(Depressed mood,loss of pleasure,significant weight loss/gain,insonmia or hypersonmia,psychomotor agitation,fatigue , feeling of worthlessness, diminished ability to concentrate or indecisiveness,recurrent thoughts of death)",
+        question:
+            "46. Have you experienced a depressive episode, including symptoms like a depressed mood, loss of pleasure, significant weight changes, sleep disturbances, psychomotor agitation, fatigue, feelings of worthlessness, difficulty concentrating, or recurrent thoughts of death?",
+      ),
     ],
   );
   @override

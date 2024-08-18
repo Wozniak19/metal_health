@@ -35,10 +35,7 @@ class _AuthScreenState extends State<AuthScreen> {
         final userCredentials = await _firebase.createUserWithEmailAndPassword(
             email: _enteredEmail, password: _enteredPassword);
 
-        final username = _enteredFirstName[0].toUpperCase() +
-            "." +
-            _enteredLastName[0].toUpperCase() +
-            _enteredLastName.substring(1).toLowerCase();
+        final username = "${_enteredFirstName[0].toUpperCase()}.${_enteredLastName[0].toUpperCase()}${_enteredLastName.substring(1).toLowerCase()}";
 
         await FirebaseFirestore.instance
             .collection('users')
@@ -66,7 +63,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(43, 58, 196, 4),
+      backgroundColor: const Color.fromARGB(43, 58, 196, 4),
       body: Center(
         child: SingleChildScrollView(
           child: Column(

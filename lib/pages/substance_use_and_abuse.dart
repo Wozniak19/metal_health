@@ -15,50 +15,38 @@ class _SubstanceUseAndAbuseState extends State<SubstanceUseAndAbuse> {
     questionBank: [
       // Your question list here (avoiding code duplication)
       Question(
-          title: "Use of illicit drugs",
-          question: "Have you used illicit drugs in the past 12 months?"),
+          title: "Use of illicit drugs or alcohol",
+          question: "92. Do you use illicit drugs or alcohol?"),
       Question(
           title: "Use of unprescribed medication",
           question:
-              "Have you used medication that was not prescribed to you in the past 12 months?"),
+              "93. Do you use medication that was not prescribed to you?"),
       Question(
           title: "Increase in dosage",
-          question:
-              "Have you found yourself increasing the dosage of drugs or medication to achieve the desired effect?"),
+          question: "94. Have you increased the dosage of substances you use?"),
       Question(
-        title: "Using more than planned",
+        title: "Uncontrollable desire to use drugs ",
         question:
-            "Have you often used drugs or medication in larger amounts or over a longer period than you intended?",
-      ),
-      Question(
-        title: "Uncontrollable desire to use drugs / Strong addiction to drugs",
-        question:
-            "Do you feel an uncontrollable desire or strong addiction to use drugs?",
+            "95. Do you have an uncontrollable desire to use drugs or a strong addiction to them?",
       ),
       Question(
         title: "Neglect of social activity",
         question:
-            "Have you neglected important social, occupational, or recreational activities because of your drug use?",
+            "96. Have you neglected social activities due to substance use?",
       ),
       Question(
         title: "Use despite knowledge of harm",
         question:
-            "Do you continue to use drugs despite knowing they cause you harm?",
+            "97. Do you continue using substances despite knowing they cause harm?",
       ),
       Question(
         title: "Withdrawal symptoms",
         question:
-            "Have you experienced withdrawal symptoms when you stopped or reduced your drug use?",
+            "98. Do you experience withdrawal symptoms when you stop using substances?",
       ),
       Question(
-        title: "Increased tolerance to the drugs",
-        question:
-            "Do you need to use larger amounts of drugs to get the same effect that you used to achieve with smaller amounts?",
-      ),
-      Question(
-        title: "Duration of 12 months",
-        question:
-            "Have you been experiencing issues related to drug use consistently for the past 12 months?",
+        title: "duration of 12 months",
+        question: "99. Has your substance use persisted for 12 months or more?",
       ),
     ],
   );

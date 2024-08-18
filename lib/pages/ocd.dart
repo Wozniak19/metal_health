@@ -15,21 +15,20 @@ class _OCDState extends State<OCD> {
     questionBank: [
       // Your question list here (avoiding code duplication)
       Question(
-          title: "Obsessions or compulsions or both are time-consuming",
+          title: "Obsessions or compulsions or both are time consuming",
           question:
-              "Do you spend more than an hour each day dealing with obsessive thoughts or compulsive behaviors?"),
+              "76. Do your obsessions or compulsions consume a significant amount of time each day?"),
       Question(
           title: "Not influenced by drugs or medical conditions",
           question:
-              "Are your obsessive thoughts and compulsive behaviors present even when you are not under the influence of drugs or medications?"),
+              "77. Are your obsessions or compulsions not influenced by drugs or medical conditions?"),
       Question(
-          title: "Uncontrollable, obsessive thoughts",
+          title: "Uncontrollable, obsessive thoughts.",
           question:
-              "Do you find it difficult or impossible to control your obsessive thoughts?"),
+              "78. Do you experience uncontrollable, obsessive thoughts?"),
       Question(
-        title: "Duration of 3 weeks",
-        question:
-            "Have you experienced these obsessive thoughts or compulsive behaviors consistently for at least the past three weeks?",
+        title: "Duration of 3 weeks.",
+        question: "79. Have these symptoms been present for at least 3 weeks?",
       ),
     ],
   );

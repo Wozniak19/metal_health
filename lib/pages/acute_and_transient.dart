@@ -16,21 +16,30 @@ class _AcuteTransientState extends State<AcuteTransient> {
       // Your question list here (avoiding code duplication)
       Question(
           title:
-              "hallucinations emerge suddenly and peak within 2 weeks and last less than 3 months.",
+              "Sudden hallucinations peaking within 2 weeks and lasting less than 3 months.",
           question:
-              "Have you ever felt like something else was \ncontrolling you or influencing your actions?"),
+              "23. Have you experienced sudden hallucinations that peaked within two weeks and lasted less than three months?"),
       Question(
           title:
-              "delusions emerge suddenly and peak within 2 weeks and last less than 3 months.",
+              "Delusions emerge suddenly and peak within 2 weeks and last less than 3 months.",
           question:
-              "Do you sometimes believe things that others \nmight find hard to believe?"),
+              "24. Have you had sudden delusions that peaked within two weeks and lasted less than three months?"),
       Question(
-          title: "Disorganized speech ",
-          question: "Do you ever see or hear things that others can't?"),
+          title: "Disorganized speech",
+          question:
+              "25. Do you find yourself speaking in a way that is difficult for others to follow or understand?"),
+      Question(
+          title: "Delirium",
+          question:
+              "26. Have you experienced confusion, disorientation, or sudden changes in awareness or cognition?"),
       Question(
           title: "Catatonia-like symptoms are possible.",
           question:
-              "Do you sometimes find it difficult to \nexpress your thoughts clearly?"),
+              "27. Have you noticed any periods of extreme stillness, unusual movements, or unresponsiveness?"),
+      Question(
+          title: "The disorder does not require hospitalisation",
+          question:
+              "28. Have your symptoms been manageable without the need for hospitalization?"),
     ],
   );
   @override

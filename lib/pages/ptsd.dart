@@ -17,41 +17,36 @@ class _PTSDState extends State<PTSD> {
       Question(
           title: "Traumatic Experience",
           question:
-              "Have you experienced a traumatic event that caused you intense fear, helplessness, or horror?"),
+              "80. Have you experienced a traumatic event that you find difficult to forget or cope with?"),
       Question(
-          title: "Post-Trauma Experience",
+          title: "Avoiding the stressor (Avoidance Behavior)",
           question:
-              "Have you experienced distressing symptoms after the traumatic event?"),
+              "81. Do you avoid reminders or situations related to the traumatic event?"),
       Question(
-          title: "Avoiding the Stressor (Avoidance Behavior)",
+          title: "Cognitive and Emotional Changes",
           question:
-              "Do you avoid people, places, or activities that remind you of the traumatic event?"),
-      Question(
-        title: "Cognitive and Emotional Changes",
-        question:
-            "Have you noticed significant changes in your thoughts or feelings since the traumatic event?",
-      ),
+              "82. Have you noticed changes in your thinking or emotions since the traumatic event?"),
       Question(
         title: "Arousal Changes",
         question:
-            "Are you more easily startled or constantly on guard since the traumatic event?",
+            "83. Is there a marked alteration in arousal and reactivity after the event has occurred (e.g., irritable and angry outbursts, reckless or self-destructive behavior, hypervigilance, problems with concentration), with two or more of these symptoms present?",
       ),
       Question(
         title:
-            "Persistent Remembering of the Incident (Flashbacks), Having Dreams or Nightmares",
+            "Persistent remembering of the incident(Flashback), having dreams or nightmares.",
         question:
-            "Do you frequently have flashbacks, dreams, or nightmares about the traumatic event",
+            "84. Do you have frequent flashbacks, dreams, or nightmares about the traumatic event?",
       ),
       Question(
         title:
-            "Causes Significant Impairment in Personal, Family, Social, Educational, Occupational, or Other Important Areas of Functioning",
+            "Causes significant impairment in personal, family, social, educational, occupational, or other important areas of functioning.",
         question:
-            "Has the traumatic event significantly impacted your personal, family, social, educational, or work life?",
+            "85. Has the trauma significantly impacted your personal, family, social, educational, or work life over the duration of a month?",
       ),
       Question(
-        title: "It Causes Impairment in Functioning",
+        title: "It causes impairment in functioning",
         question:
-            "Do your symptoms make it difficult for you to function in your daily life?",
+            "86. Do your PTSD symptoms cause significant impairment in your daily functioning?",
       ),
     ],
   );

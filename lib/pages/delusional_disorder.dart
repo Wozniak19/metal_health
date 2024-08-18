@@ -15,32 +15,35 @@ class _DelusionalDisorderState extends State<DelusionalDisorder> {
     questionBank: [
       // Your question list here (avoiding code duplication)
       Question(
-          title: "Delusions lasting 3 months",
+          title: "Delusions lasting at least 3 months",
           question:
-              "Have you had any beliefs or ideas that \nyou think others might find unusual "
-              "\nor not based in reality for at least the past three months?"),
+              "29. Have you experienced delusions that have lasted for three months?"),
       Question(
-          title: "Absence of schizophrenia symptoms",
+          title: "Absence of schizophrenia symptoms except delusions",
           question:
-              "Have you experienced any symptoms typically \nassociated with schizophrenia, "
-              "\nsuch as hallucinations or disorganized thinking?"),
+              "30. Apart from delusions, have you not experienced other symptoms commonly associated with schizophrenia, such as hallucinations or disorganized speech?"),
       Question(
           title: "Absence of mood episodes",
-          question: "Have you had any significant changes in your mood, "
-              "\nsuch as prolonged periods of depression or episodes of \nextreme happiness and energy?"),
+          question:
+              "31. Have you not experienced significant mood episodes like depression or mania?"),
       Question(
           title: "Persistence of Delusions",
           question:
-              "Do your unusual beliefs ever go away or become less intense?"),
+              "32. Do your delusions persist over time without significant change?"),
+      Question(
+          title:
+              "Presence of 1 or more delusions within a  duration of one month",
+          question:
+              "33. Have you experienced one or more delusions lasting at least one month?"),
       Question(
           title: "Presence of perceptual disturbances",
-          question: "Have you had any unusual sensory experiences, "
-              "\nlike seeing, hearing, or feeling things that others do not?"),
-      Question(
-          title: "Less impairment in function",
           question:
-              "Despite your unusual beliefs, are you still able to maintain "
-              "\nyour work, social life, and personal care \nwithout much difficulty?"),
+              "34. Have you noticed any perceptual disturbances, such as seeing or hearing things differently?"),
+      Question(
+        title: "Less impairment in function",
+        question:
+            "35. Have your delusions caused only minimal impact on your daily functioning or ability to work and socialize?",
+      ),
     ],
   );
   @override

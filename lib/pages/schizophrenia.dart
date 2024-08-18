@@ -15,46 +15,43 @@ class _SchizophreniaState extends State<Schizophrenia> {
     questionBank: [
       // Your question list here (avoiding code duplication)
       Question(
-          title: "Experiences of influence,passitivity or control",
+          title: "Delusions",
           question:
-              "Have you ever felt like something else was \ncontrolling you or influencing your actions?"),
+              "14. Do you hold beliefs that others consider false or unusual, and that you are unwilling to give up?"),
       Question(
-          title: "delusions",
+          title: "Hallucinations",
           question:
-              "Do you sometimes believe things that others \nmight find hard to believe?"),
+              "15. Do you see or hear things that others do not perceive?"),
       Question(
-          title: "hallucinations",
-          question: "Do you ever see or hear things that others can't?"),
-      Question(
-          title: "disorganized thinking or speech patterns",
+          title: "Disorganized thinking or speech patterns",
           question:
-              "Do you sometimes find it difficult to \nexpress your thoughts clearly?"),
+              "16. Do you find it difficult to organize your thoughts or speak in a way that others can easily understand?"),
       Question(
-          title: "disorganized speech patterns",
+          title: "Disburbance in multiple mental modalities",
           question:
-              "Have you noticed changes in your \nthinking, mood, or behavior?"),
+              "17. Do you experience difficulties in more than one area of your mental functioning, such as thinking, perception, or emotions?"),
       Question(
-          title: "disburbance in multiple mental modalities",
-          question: "Do you feel worthless or have low self-esteem?"),
-      Question(
-          title: "functional decline",
+          title: "Functional decline",
           question:
-              "Have you noticed a decline in your \nability to do everyday tasks?"),
+              "18. Have you noticed a decline in your ability to function at work, in social settings, or in daily activities?"),
       Question(
-          title: "negative symptoms",
+          title:
+              "Negative symptoms(avolition,agolia,diminished emotional expression,anhedonia)",
           question:
-              "Do you often feel like you \nlack motivation or interest in things?"),
+              "19. Do you find yourself lacking motivation, struggling to express emotions, or feeling less pleasure in activities you once enjoyed?"),
       Question(
           title: "family history",
-          question: "Does anyone in your family have mental health issues?"),
+          question:
+              "20. Is there a history of schizophrenia or similar mental health conditions in your family?"),
       Question(
           title: "neurological soft signs",
           question:
-              "Do you have any unusual movements or \nbehaviors that others might notice?"),
+              "21. Have you noticed subtle motor or sensory changes, such as awkwardness or difficulties with coordination?"),
       Question(
-          title: " avolition",
-          question:
-              "Do you sometimes struggle to find the \nmotivation to do things?"),
+        title: "Not influenced by drugs or medical conditions",
+        question:
+            "22. Are your symptoms present even when you are not using drugs or experiencing a medical condition that could explain them?",
+      ),
     ],
   );
   @override

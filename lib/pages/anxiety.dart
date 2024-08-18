@@ -16,67 +16,158 @@ class Anxiety extends StatefulWidget {
 class _AnxietyState extends State<Anxiety> {
   final QuestionBrain bipolarBrain = QuestionBrain(
     questionBank: [
-      // Your question list here (avoiding code duplication)
+      //Start of Generalized Anxiety
       Question(
-          title: "Prolonged heightened mood and activity",
+          title: "Excessive worry,Restlessness",
           question:
-              "Have you experienced a prolonged, heightened mood and increased "
-              "\nactivity lasting for over a week?"),
+              "47.Have you experienced excessive worry or restlessness that is difficult to control?"),
       Question(
-          title: "Persistent risky behaviors",
+          title:
+              "The anxiety and worry are associated with 3 or more of the ff,fatigue, concentration difficulties, irritability, muscle tension, sleep disturbance )",
           question:
-              "Have you engaged in risky behaviors that persisted for over a week?"),
+              "48.Have you experienced three or more of the following symptoms: fatigue, difficulty concentrating, irritability, muscle tension, or sleep disturbances?"),
       Question(
-          title: "Flying thoughts",
+          title:
+              "Persistent anxiety about various aspects, lasting over 6 months",
           question:
-              "Have you had rapid or flying thoughts that you couldn't control?"),
+              "49.Have you had persistent worry or fear about various aspects of your life that has lasted for over six months?"),
       Question(
-          title: "Reduced sleep",
+          title: "Difficulty controlling the worry (Controlling worry)",
           question:
-              "Have you noticed a significant reduction in your need for sleep?"),
+              "50.Have you found it difficult to control your worry or stop yourself from worrying?"),
       Question(
-          title: "High-risk activities",
+          title:
+              "Anxiety causes distress, impairs social, occupational functioning; clinically significant impact",
           question:
-              "Have you been excessively involved in activities that have a "
-              "\nhigh potential for painful consequences?"),
+              "51.Has your nervousness caused significant distress or impairment in your social, occupational, or other important areas of functioning?"),
       Question(
-          title: "Talkativeness",
-          question: "Have you been more talkative than usual?"),
-      Question(
-          title: "Grandiosity",
+          title:
+              "Not caused by substances or medical conditions; excludes physiological attributions.",
           question:
-              "Have you felt an inflated sense of self-esteem or grandiosity?"),
+              "52.Have your symptoms occurred without being caused by the effects of substances or medical conditions?"),
       Question(
-          title: "Depressed mood",
-          question: "Have you experienced periods of depressed mood?"),
-      Question(
-          title: "Distractibility",
+          title:
+              "Symptoms must also occur most part of the day, not confined to specific situations or objects",
           question:
-              "Have you found it difficult to concentrate or been easily distracted?"),
+              "53.Do your symptoms occur most of the day and are not limited to specific situations or objects?"),
+      //End of Generalized Anxiety
+
+      //Start of Panic Disorder
       Question(
-          title: "Not due to substance use",
-          question: "Have these symptoms occurred without being "
-              "\nattributable to the physiological effects of substance use?"),
-      Question(
-          title: "Severe mood disruption",
-          question: "Have you experienced severe mood disruptions?"),
-      Question(
-          title: "Duration over one week",
+          title:
+              "Recurrent panic attacks involving abrupt, intense fear with physical and psychological symptoms(palpitations or increased heart rate,sweating,trembling,shortness of breath,chest pain,dizziness or lightheadedness,chills,hot flushes, fear of imminent death, four of more present )",
           question:
-              "Have these mood disruptions lasted for longer than one week?"),
+              "54.Have you experienced recurrent panic attacks involving abrupt, intense fear, with symptoms like palpitations, sweating, trembling, shortness of breath, chest pain, dizziness, chills,nausea,paresthesias,derealization,fear of losing control,hot flushes, or fear of imminent death, with four or more symptoms present?"),
       Question(
-          title: "Uncharacteristic change in functioning",
-          question: "Have you had an episode involving a clear change in "
-              "\nyour functioning that is uncharacteristic of you?"),
-      Question(
-          title: "Observable mood disturbance and change",
+          title: "Discrete episodes of intense fear or apprehension(5-30 mins)",
           question:
-              "Have others observed the disturbance in your \nmood and change in functioning?"),
+              "55.Have you experienced discrete episodes of intense fear or apprehension lasting between 5 to 30 minutes?"),
       Question(
-          title: "Less severe, psychosis if manic",
+          title:
+              "Disturbance is not due to substance effects or medical conditions like hyperthyroidism, ruling out physiological attributions",
           question:
-              "Has the episode lacked the severity to impair your functioning \nsignificantly or require hospitalization? "
-              "\nIf there were any psychotic features, \nwere they during a manic episode?"),
+              "56.Are your panic attacks not caused by the effects of substances or medical conditions like hyperthyroidism?"),
+      Question(
+          title:
+              "The person may also have worries or fears of further episodes occurring",
+          question:
+              "57.Do you worry or have fears about further episodes of panic attacks occurring?"),
+      //End of Panic Disorder
+
+      //Start of Specific Phobia
+      Question(
+          title:
+              "Marked and excessive fear triggered by specific objects or situations. (Sighting of blood or injury, fear of heights, fear of closed spaces)",
+          question:
+              "58.Do you experience marked and excessive fear triggered by specific objects or situations, such as the sight of blood, heights, or closed spaces?"),
+      Question(
+          title:
+              "The object or situation almost always promotes immediate fear",
+          question:
+              "59.Does the sight or thought of the specific object or situation almost always cause immediate fear?"),
+      Question(
+          title:
+              "The phobic object or situation is actively avoided or endured with intense fear or anxiety",
+          question:
+              "60.Do you avoid the phobic object or situation, or endure it with intense fear or worry?"),
+      Question(
+        title:
+            "The fear or anxiety is out of proportion to the actual danger posed by the specific objector situation and to the sociocultural context.",
+        question:
+            "61.Is your fear or worry out of proportion to the actual danger posed by the specific object or situation in your sociocultural context?",
+      ),
+      Question(
+        title:
+            "The fear, anxiety, or avoidance causes clinically significant distress or impairment in social, occupational, or other important areas of functioning",
+        question:
+            "62.Does your fear, worry, or avoidance cause significant distress or impairment in your social, work, or other important areas of functioning?",
+      ),
+      Question(
+        title: "Fear is out of proportion to actual danger.",
+        question:
+            "63.Is your fear out of proportion to the actual danger posed by the object or situation?",
+      ),
+      Question(
+        title: "Avoidance or intense anxiety is present",
+        question:
+            "64.Is the fear or avoidance persistent typically lasting for 6 months or more",
+      ),
+      //End of Specific Phobia
+
+      //Start of Social Anxiety
+      Question(
+          title: "Marked avoidance of such objects or situations.",
+          question:
+              "65.Do you find yourself markedly avoiding social situations or objects that trigger fear or anxiety?"),
+      Question(
+          title: "fear or anxiety is out of proportion",
+          question:
+              "66.Is your fear or anxiety in social situations out of proportion to the actual threat or situation?"),
+      Question(
+          title:
+              "Fear or anxiety causes impairment in function either social, occupational or other important areas of functioning",
+          question:
+              "67.Does your fear or anxiety cause significant impairment in your social, occupational, or other important areas of functioning?"),
+      Question(
+          title: "The social situations almost always provoke fear or anxiety",
+          question:
+              "68.Do social situations almost always provoke fear or anxiety for you?"),
+      Question(
+          title:
+              "The social situations are avoided or endured with intense fear or anxiety",
+          question:
+              "69.Do you avoid social situations or endure them with intense fear or anxiety?"),
+      Question(
+          title:
+              "The individual fears that he or she will act in a way or show anxiety symptoms that will be negatively evaluated",
+          question:
+              "70.Do you fear that you will act in a way or show anxiety symptoms that will be negatively evaluated by others?"),
+      Question(
+          title: "Fear of negative evaluation by others.",
+          question:
+              "71.Do you have a persistent fear of being negatively evaluated by others in social situations?"),
+      Question(
+          title:
+              "Intense and persistent fear or anxiety in social situations, including conversations.",
+          question:
+              "72.Do you experience intense and persistent fear or anxiety in social situations, including conversations?"),
+      Question(
+          title:
+              "Significant emotional distress due to the symptoms or to the avoidance.",
+          question:
+              "73.Do your symptoms or the avoidance of social situations cause significant emotional distress?"),
+      Question(
+          title:
+              "Recognition that the symptoms or the avoidance are excessive or unreasonable.",
+          question:
+              "74.Do you recognize that your symptoms or the avoidance of social situations are excessive or unreasonable?"),
+      Question(
+        title:
+            "Symptoms are restricted to or predominate in the feared situation or when thinking about it which could lead to Blushing,Fear of vomiting. Urgency or fear of micturition or defecation",
+        question:
+            "75.Do your symptoms predominate in social situations or when thinking about them, such as blushing, fear of vomiting, or urgency or fear of micturition or defecation?",
+      ),
+      //End of Social Anxiety
     ],
   );
   @override
