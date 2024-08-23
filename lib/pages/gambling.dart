@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:metal_health/utils/question_brain.dart';
+import 'package:metal_health/question_brain.dart';
 import 'package:metal_health/utils/radio_button.dart';
 import 'package:metal_health/question.dart';
 
 class Gambling extends StatefulWidget {
-  const Gambling({super.key});
+  final Function(Map<String, String>) onCompleted;
+
+  const Gambling({super.key, required this.onCompleted});
 
   @override
   State<Gambling> createState() => _GamblingState();
 }
 
 class _GamblingState extends State<Gambling> {
-  final QuestionBrain gambling = QuestionBrain(
+  final Map<String, String> responses = {}; // String to String
+  final QuestionBrain gamblingBrain = QuestionBrain(
     questionBank: [
       // Your question list here (avoiding code duplication)
       Question(
@@ -42,30 +45,50 @@ class _GamblingState extends State<Gambling> {
   );
 
   @override
+  void initState() {
+    super.initState();
+    // Set default responses to "No" -> "0" as String
+    for (var question in gamblingBrain.questionBank) {
+      responses[question.title] = "0";
+    }
+  }
+
+  void _submitResponses() {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('Button Pressed')));
+
+    widget.onCompleted(responses);
+    Navigator.of(context).pop();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Gambling Disorder Diagnosis',
-            style: TextStyle(color: Colors.black),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.grey.shade200,
-        ),
-        body: ListView.builder(
-          itemCount: gambling.questionCount(),
-          itemBuilder: (context, index) => RadioButton(
-            bigTitle: gambling.questionBank[index].title,
-            question: gambling.questionBank[index].question,
-          ),
-        ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        // floatingActionButton: ElevatedButton(
-        //   onPressed: () {},
-        //   child: Text('Submit'),
-        // ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Gambling Diagnosis'),
+        centerTitle: true,
+        backgroundColor: Colors.grey.shade200,
+      ),
+      body: ListView.builder(
+        itemCount: gamblingBrain.questionCount(),
+        itemBuilder: (context, index) {
+          final question = gamblingBrain.questionBank[index];
+          return RadioButton(
+            bigTitle: question.title,
+            question: question.question,
+            initialValue:
+                responses[question.title]!, // Ensure string value is passed
+            onChanged: (String title, String value) {
+              setState(() {
+                responses[title] = value;
+              });
+            },
+          );
+        },
+      ),
+      floatingActionButton: ElevatedButton(
+        onPressed: _submitResponses,
+        child: const Text('Submit'),
       ),
     );
   }

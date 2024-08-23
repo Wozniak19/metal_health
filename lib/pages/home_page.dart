@@ -57,6 +57,7 @@ class _HomePageState extends State<HomePage> {
   ];
 
   String? _username;
+  // ignore: unused_field
   bool _isLoading = true;
 
   @override

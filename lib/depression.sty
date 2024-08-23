@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:metal_health/question_brain.dart';
+import 'package:metal_health/utils/question_brain.dart';
 import 'package:metal_health/utils/radio_button.dart';
 import 'package:metal_health/question.dart';
 
 class Depression extends StatefulWidget {
-  final Function(Map<String, String>) onCompleted;
-
-  const Depression({super.key, required this.onCompleted});
+  const Depression({super.key});
 
   @override
   State<Depression> createState() => _DepressionState();
 }
 
 class _DepressionState extends State<Depression> {
-  final Map<String, String> responses = {}; // String to String
   final QuestionBrain depressionBrain = QuestionBrain(
     questionBank: [
+      // Your question list here (avoiding code duplication)
       Question(
           title: "Depressive mood",
           question:
@@ -70,50 +68,30 @@ class _DepressionState extends State<Depression> {
   );
 
   @override
-  void initState() {
-    super.initState();
-    // Set default responses to "No" -> "0" as String
-    for (var question in depressionBrain.questionBank) {
-      responses[question.title] = "0";
-    }
-  }
-
-  void _submitResponses() {
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('Button Pressed')));
-
-    widget.onCompleted(responses);
-    Navigator.of(context).pop();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Depression Diagnosis'),
-        centerTitle: true,
-        backgroundColor: Colors.grey.shade200,
-      ),
-      body: ListView.builder(
-        itemCount: depressionBrain.questionCount(),
-        itemBuilder: (context, index) {
-          final question = depressionBrain.questionBank[index];
-          return RadioButton(
-            bigTitle: question.title,
-            question: question.question,
-            initialValue:
-                responses[question.title]!, // Ensure string value is passed
-            onChanged: (String title, String value) {
-              setState(() {
-                responses[title] = value;
-              });
-            },
-          );
-        },
-      ),
-      floatingActionButton: ElevatedButton(
-        onPressed: _submitResponses,
-        child: const Text('Submit'),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Depression Diagnosis',
+            style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.grey.shade200,
+        ),
+        body: ListView.builder(
+          itemCount: depressionBrain.questionCount(),
+          itemBuilder: (context, index) => RadioButton(
+            bigTitle: depressionBrain.questionBank[index].title,
+            question: depressionBrain.questionBank[index].question,
+          ),
+        ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        // floatingActionButton: ElevatedButton(
+        //   onPressed: () {},
+        //   child: Text('Submit'),
+        // ),
       ),
     );
   }

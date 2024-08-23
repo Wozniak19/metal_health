@@ -2,19 +2,22 @@
 // specific phobia and social anxiety
 
 import 'package:flutter/material.dart';
-import 'package:metal_health/utils/question_brain.dart';
+import 'package:metal_health/question_brain.dart';
 import 'package:metal_health/utils/radio_button.dart';
 import 'package:metal_health/question.dart';
 
 class Anxiety extends StatefulWidget {
-  const Anxiety({super.key});
+  final Function(Map<String, String>) onCompleted;
+
+  const Anxiety({super.key, required this.onCompleted});
 
   @override
   State<Anxiety> createState() => _AnxietyState();
 }
 
 class _AnxietyState extends State<Anxiety> {
-  final QuestionBrain bipolarBrain = QuestionBrain(
+  final Map<String, String> responses = {}; // String to String
+  final QuestionBrain anxietyBrain = QuestionBrain(
     questionBank: [
       //Start of Generalized Anxiety
       Question(
@@ -170,31 +173,48 @@ class _AnxietyState extends State<Anxiety> {
       //End of Social Anxiety
     ],
   );
+
+  @override
+  void initState() {
+    super.initState();
+    // Set default responses to "No"
+    for (var question in anxietyBrain.questionBank) {
+      responses[question.title] = "0";
+    }
+  }
+
+  void _submitResponses() {
+    widget.onCompleted(responses);
+    Navigator.of(context).pop();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Anxiety  Diagnosis',
-            style: TextStyle(color: Colors.black),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.grey.shade200,
-        ),
-        body: ListView.builder(
-          itemCount: bipolarBrain.questionCount(),
-          itemBuilder: (context, index) => RadioButton(
-            bigTitle: bipolarBrain.questionBank[index].title,
-            question: bipolarBrain.questionBank[index].question,
-          ),
-        ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        // floatingActionButton: ElevatedButton(
-        //   onPressed: () {},
-        //   child: Text('Submit'),
-        // ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Anxiety Diagnosis'),
+        centerTitle: true,
+        backgroundColor: Colors.grey.shade200,
+      ),
+      body: ListView.builder(
+        itemCount: anxietyBrain.questionCount(),
+        itemBuilder: (context, index) {
+          final question = anxietyBrain.questionBank[index];
+          return RadioButton(
+            bigTitle: question.title,
+            question: question.question,
+            initialValue: responses[question.title]!,
+            onChanged: (String title, String value) {
+              setState(() {
+                responses[title] = value;
+              });
+            },
+          );
+        },
+      ),
+      floatingActionButton: ElevatedButton(
+        onPressed: _submitResponses,
+        child: const Text('Submit'),
       ),
     );
   }

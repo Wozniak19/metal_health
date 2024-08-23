@@ -3,15 +3,11 @@ import 'package:flutter/material.dart';
 class RadioButton extends StatefulWidget {
   final String bigTitle;
   final String question;
-  final Function(String, String) onChanged; // Change int to String
-  final String initialValue; // Change int to String
 
   const RadioButton({
     super.key,
     required this.bigTitle,
     required this.question,
-    required this.onChanged,
-    this.initialValue = "0", // Default is "No" as String
   });
 
   @override
@@ -19,13 +15,7 @@ class RadioButton extends StatefulWidget {
 }
 
 class _RadioButtonState extends State<RadioButton> {
-  late String groupValue; // Keeping it as String
-
-  @override
-  void initState() {
-    super.initState();
-    groupValue = widget.initialValue == "1" ? 'Yes' : 'No';
-  }
+  String? groupValue;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +65,6 @@ class _RadioButtonState extends State<RadioButton> {
                     setState(() {
                       groupValue = value!;
                     });
-                    widget.onChanged(widget.bigTitle, "1"); // "Yes" -> "1"
                   },
                 ),
                 const Text(
@@ -94,7 +83,6 @@ class _RadioButtonState extends State<RadioButton> {
                     setState(() {
                       groupValue = value!;
                     });
-                    widget.onChanged(widget.bigTitle, "0"); // "No" -> "0"
                   },
                 ),
                 const Text(

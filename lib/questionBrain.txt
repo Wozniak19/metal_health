@@ -1,0 +1,517 @@
+final QuestionBrain depressionBrain = QuestionBrain(
+    questionBank: [
+      // Your question list here (avoiding code duplication)
+      Question(
+          title: "Depressive mood",
+          question:
+              "1. Have you been feeling consistently sad, down, or hopeless?"),
+      Question(
+          title: "Loss of Pleasure",
+          question:
+              "2. Have you lost interest or pleasure in activities you used to enjoy?"),
+      Question(
+          title: "Cognitive symptoms",
+          question:
+              "3. Do you have trouble thinking, concentrating, or making decisions?"),
+      Question(
+          title: "Behavioural symptoms",
+          question:
+              "4. Have you noticed changes in your behavior, such as withdrawing from social activities or neglecting responsibilities?"),
+      Question(
+          title: "Changes in sleep patterns or appetite",
+          question:
+              "5. Do you often struggle to fall asleep, or do you find yourself sleeping more than usual?"),
+      Question(
+          title: "Feeling worthless and low self esteem",
+          question: "6. Do you often feel worthless or have low self-esteem?"),
+      Question(
+          title: "Suicidal thoughts",
+          question: "7. Have you had thoughts of suicide or harming yourself?"),
+      Question(
+          title: "Low energy or fatigue",
+          question:
+              "8. Do you often feel fatigued or have low energy, even when you haven't exerted yourself?"),
+      Question(
+          title: "Irritability",
+          question:
+              "9. Do you find yourself feeling irritable or easily annoyed?"),
+      Question(
+          title: "Disturbed sleep or sleeping too much",
+          question:
+              "10. Have you noticed changes in your appetite or experienced unexplained weight loss recently?"),
+      Question(
+          title: "Indecisiveness",
+          question:
+              "11. Do you struggle with making decisions, even about simple things?"),
+      Question(
+          title: "Talking or moving more slowly than usual",
+          question:
+              "12. Have others noticed that you talk or move more slowly than usual?"),
+      Question(
+          title: "Reduced libido",
+          question:
+              "13. Have you experienced a decrease in your interest in sex?"),
+    ],
+  );
+
+
+final QuestionBrain schizophreniaBrain = QuestionBrain(
+    questionBank: [
+      // Your question list here (avoiding code duplication)
+      Question(
+          title: "Delusions",
+          question:
+              "14. Do you hold beliefs that others consider false or unusual, and that you are unwilling to give up?"),
+      Question(
+          title: "Hallucinations",
+          question:
+              "15. Do you see or hear things that others do not perceive?"),
+      Question(
+          title: "Disorganized thinking or speech patterns",
+          question:
+              "16. Do you find it difficult to organize your thoughts or speak in a way that others can easily understand?"),
+      Question(
+          title: "Disburbance in multiple mental modalities",
+          question:
+              "17. Do you experience difficulties in more than one area of your mental functioning, such as thinking, perception, or emotions?"),
+      Question(
+          title: "Functional decline",
+          question:
+              "18. Have you noticed a decline in your ability to function at work, in social settings, or in daily activities?"),
+      Question(
+          title:
+              "Negative symptoms(avolition,agolia,diminished emotional expression,anhedonia)",
+          question:
+              "19. Do you find yourself lacking motivation, struggling to express emotions, or feeling less pleasure in activities you once enjoyed?"),
+      Question(
+          title: "family history",
+          question:
+              "20. Is there a history of schizophrenia or similar mental health conditions in your family?"),
+      Question(
+          title: "neurological soft signs",
+          question:
+              "21. Have you noticed subtle motor or sensory changes, such as awkwardness or difficulties with coordination?"),
+      Question(
+        title: "Not influenced by drugs or medical conditions",
+        question:
+            "22. Are your symptoms present even when you are not using drugs or experiencing a medical condition that could explain them?",
+      ),
+    ],
+  );
+
+
+  final QuestionBrain acuteBrain = QuestionBrain(
+    questionBank: [
+      // Your question list here (avoiding code duplication)
+      Question(
+          title:
+              "Sudden hallucinations peaking within 2 weeks and lasting less than 3 months.",
+          question:
+              "23. Have you experienced sudden hallucinations that peaked within two weeks and lasted less than three months?"),
+      Question(
+          title:
+              "Delusions emerge suddenly and peak within 2 weeks and last less than 3 months.",
+          question:
+              "24. Have you had sudden delusions that peaked within two weeks and lasted less than three months?"),
+      Question(
+          title: "Disorganized speech",
+          question:
+              "25. Do you find yourself speaking in a way that is difficult for others to follow or understand?"),
+      Question(
+          title: "Delirium",
+          question:
+              "26. Have you experienced confusion, disorientation, or sudden changes in awareness or cognition?"),
+      Question(
+          title: "Catatonia-like symptoms are possible.",
+          question:
+              "27. Have you noticed any periods of extreme stillness, unusual movements, or unresponsiveness?"),
+      Question(
+          title: "The disorder does not require hospitalisation",
+          question:
+              "28. Have your symptoms been manageable without the need for hospitalization?"),
+    ],
+  );
+
+  final QuestionBrain delusionalBrain = QuestionBrain(
+    questionBank: [
+      // Your question list here (avoiding code duplication)
+      Question(
+          title: "Delusions lasting at least 3 months",
+          question:
+              "29. Have you experienced delusions that have lasted for three months?"),
+      Question(
+          title: "Absence of schizophrenia symptoms except delusions",
+          question:
+              "30. Apart from delusions, have you not experienced other symptoms commonly associated with schizophrenia, such as hallucinations or disorganized speech?"),
+      Question(
+          title: "Absence of mood episodes",
+          question:
+              "31. Have you not experienced significant mood episodes like depression or mania?"),
+      Question(
+          title: "Persistence of Delusions",
+          question:
+              "32. Do your delusions persist over time without significant change?"),
+      Question(
+          title:
+              "Presence of 1 or more delusions within a  duration of one month",
+          question:
+              "33. Have you experienced one or more delusions lasting at least one month?"),
+      Question(
+          title: "Presence of perceptual disturbances",
+          question:
+              "34. Have you noticed any perceptual disturbances, such as seeing or hearing things differently?"),
+      Question(
+        title: "Less impairment in function",
+        question:
+            "35. Have your delusions caused only minimal impact on your daily functioning or ability to work and socialize?",
+      ),
+    ],
+  );
+
+  final QuestionBrain bipolarBrain = QuestionBrain(
+    questionBank: [
+      // Your question list here (avoiding code duplication)
+      Question(
+          title: "Flying thoughts",
+          question:
+              "36. Have you experienced thoughts racing through your mind, making it difficult to focus on one thing at a time?"),
+      Question(
+          title:
+              "Excessive involvement in activities that have a high potential for painful consequences",
+          question:
+              "37. Have you found yourself excessively involved in activities that could lead to painful or harmful consequences, such as reckless spending or risky behaviors?"),
+      Question(
+          title:
+              "Mood disturbances(Talkativeness,Grandiosity,Distractibility,Reduced sleep,Irritability)",
+          question:
+              "38. Have you experienced mood disturbances such as being excessively talkative, feeling grandiose, getting easily distracted, sleeping less, or feeling irritable? (Note: At least three should be present, or four if irritability is one of them.)"),
+      Question(
+          title:
+              "Prolonged, heightened mood and increased activity for over a week",
+          question:
+              "39. Have you experienced a heightened mood and increased activity level that lasted for over a week?"),
+      Question(
+          title: "Severe mood disruption needing hospitalization",
+          question:
+              "40. Has your mood ever become so disruptive that it required hospitalization?"),
+      Question(
+          title: "Risky behaviours persist over a week",
+          question:
+              "41. Have you engaged in risky behaviors that persisted for more than a week?"),
+      Question(
+          title:
+              "Not Attributable to the physiological effect of substance use",
+          question:
+              "42. Have your symptoms occurred without being caused by the effects of substance use, such as drugs or alcohol?"),
+      Question(
+          title: "Presence of pyschotic symptoms",
+          question:
+              "43. Have you experienced any psychotic symptoms, such as delusions or hallucinations, during your mood episodes?"),
+      Question(
+          title:
+              "The episode involves a clear change in functioning uncharacteristic of the individual.",
+          question:
+              "44. Have you noticed a clear change in your functioning during an episode that seems uncharacteristic of your usual self?"),
+      Question(
+          title:
+              "The disturbance in mood and the change in functioning are observable to others",
+          question:
+              "45. Have others noticed a disturbance in your mood and a change in your functioning?"),
+      Question(
+        title:
+            "Depressive episode(Depressed mood,loss of pleasure,significant weight loss/gain,insonmia or hypersonmia,psychomotor agitation,fatigue , feeling of worthlessness, diminished ability to concentrate or indecisiveness,recurrent thoughts of death)",
+        question:
+            "46. Have you experienced a depressive episode, including symptoms like a depressed mood, loss of pleasure, significant weight changes, sleep disturbances, psychomotor agitation, fatigue, feelings of worthlessness, difficulty concentrating, or recurrent thoughts of death?",
+      ),
+    ],
+  );
+
+  final QuestionBrain anxietyBrain = QuestionBrain(
+    questionBank: [
+      //Start of Generalized Anxiety
+      Question(
+          title: "Excessive worry,Restlessness",
+          question:
+              "47.Have you experienced excessive worry or restlessness that is difficult to control?"),
+      Question(
+          title:
+              "The anxiety and worry are associated with 3 or more of the ff,fatigue, concentration difficulties, irritability, muscle tension, sleep disturbance )",
+          question:
+              "48.Have you experienced three or more of the following symptoms: fatigue, difficulty concentrating, irritability, muscle tension, or sleep disturbances?"),
+      Question(
+          title:
+              "Persistent anxiety about various aspects, lasting over 6 months",
+          question:
+              "49.Have you had persistent worry or fear about various aspects of your life that has lasted for over six months?"),
+      Question(
+          title: "Difficulty controlling the worry (Controlling worry)",
+          question:
+              "50.Have you found it difficult to control your worry or stop yourself from worrying?"),
+      Question(
+          title:
+              "Anxiety causes distress, impairs social, occupational functioning; clinically significant impact",
+          question:
+              "51.Has your nervousness caused significant distress or impairment in your social, occupational, or other important areas of functioning?"),
+      Question(
+          title:
+              "Not caused by substances or medical conditions; excludes physiological attributions.",
+          question:
+              "52.Have your symptoms occurred without being caused by the effects of substances or medical conditions?"),
+      Question(
+          title:
+              "Symptoms must also occur most part of the day, not confined to specific situations or objects",
+          question:
+              "53.Do your symptoms occur most of the day and are not limited to specific situations or objects?"),
+      //End of Generalized Anxiety
+
+      //Start of Panic Disorder
+      Question(
+          title:
+              "Recurrent panic attacks involving abrupt, intense fear with physical and psychological symptoms(palpitations or increased heart rate,sweating,trembling,shortness of breath,chest pain,dizziness or lightheadedness,chills,hot flushes, fear of imminent death, four of more present )",
+          question:
+              "54.Have you experienced recurrent panic attacks involving abrupt, intense fear, with symptoms like palpitations, sweating, trembling, shortness of breath, chest pain, dizziness, chills,nausea,paresthesias,derealization,fear of losing control,hot flushes, or fear of imminent death, with four or more symptoms present?"),
+      Question(
+          title: "Discrete episodes of intense fear or apprehension(5-30 mins)",
+          question:
+              "55.Have you experienced discrete episodes of intense fear or apprehension lasting between 5 to 30 minutes?"),
+      Question(
+          title:
+              "Disturbance is not due to substance effects or medical conditions like hyperthyroidism, ruling out physiological attributions",
+          question:
+              "56.Are your panic attacks not caused by the effects of substances or medical conditions like hyperthyroidism?"),
+      Question(
+          title:
+              "The person may also have worries or fears of further episodes occurring",
+          question:
+              "57.Do you worry or have fears about further episodes of panic attacks occurring?"),
+      //End of Panic Disorder
+
+      //Start of Specific Phobia
+      Question(
+          title:
+              "Marked and excessive fear triggered by specific objects or situations. (Sighting of blood or injury, fear of heights, fear of closed spaces)",
+          question:
+              "58.Do you experience marked and excessive fear triggered by specific objects or situations, such as the sight of blood, heights, or closed spaces?"),
+      Question(
+          title:
+              "The object or situation almost always promotes immediate fear",
+          question:
+              "59.Does the sight or thought of the specific object or situation almost always cause immediate fear?"),
+      Question(
+          title:
+              "The phobic object or situation is actively avoided or endured with intense fear or anxiety",
+          question:
+              "60.Do you avoid the phobic object or situation, or endure it with intense fear or worry?"),
+      Question(
+        title:
+            "The fear or anxiety is out of proportion to the actual danger posed by the specific objector situation and to the sociocultural context.",
+        question:
+            "61.Is your fear or worry out of proportion to the actual danger posed by the specific object or situation in your sociocultural context?",
+      ),
+      Question(
+        title:
+            "The fear, anxiety, or avoidance causes clinically significant distress or impairment in social, occupational, or other important areas of functioning",
+        question:
+            "62.Does your fear, worry, or avoidance cause significant distress or impairment in your social, work, or other important areas of functioning?",
+      ),
+      Question(
+        title: "Fear is out of proportion to actual danger.",
+        question:
+            "63.Is your fear out of proportion to the actual danger posed by the object or situation?",
+      ),
+      Question(
+        title: "Avoidance or intense anxiety is present",
+        question:
+            "64.Is the fear or avoidance persistent typically lasting for 6 months or more",
+      ),
+      //End of Specific Phobia
+
+      //Start of Social Anxiety
+      Question(
+          title: "Marked avoidance of such objects or situations.",
+          question:
+              "65.Do you find yourself markedly avoiding social situations or objects that trigger fear or anxiety?"),
+      Question(
+          title: "fear or anxiety is out of proportion",
+          question:
+              "66.Is your fear or anxiety in social situations out of proportion to the actual threat or situation?"),
+      Question(
+          title:
+              "Fear or anxiety causes impairment in function either social, occupational or other important areas of functioning",
+          question:
+              "67.Does your fear or anxiety cause significant impairment in your social, occupational, or other important areas of functioning?"),
+      Question(
+          title: "The social situations almost always provoke fear or anxiety",
+          question:
+              "68.Do social situations almost always provoke fear or anxiety for you?"),
+      Question(
+          title:
+              "The social situations are avoided or endured with intense fear or anxiety",
+          question:
+              "69.Do you avoid social situations or endure them with intense fear or anxiety?"),
+      Question(
+          title:
+              "The individual fears that he or she will act in a way or show anxiety symptoms that will be negatively evaluated",
+          question:
+              "70.Do you fear that you will act in a way or show anxiety symptoms that will be negatively evaluated by others?"),
+      Question(
+          title: "Fear of negative evaluation by others.",
+          question:
+              "71.Do you have a persistent fear of being negatively evaluated by others in social situations?"),
+      Question(
+          title:
+              "Intense and persistent fear or anxiety in social situations, including conversations.",
+          question:
+              "72.Do you experience intense and persistent fear or anxiety in social situations, including conversations?"),
+      Question(
+          title:
+              "Significant emotional distress due to the symptoms or to the avoidance.",
+          question:
+              "73.Do your symptoms or the avoidance of social situations cause significant emotional distress?"),
+      Question(
+          title:
+              "Recognition that the symptoms or the avoidance are excessive or unreasonable.",
+          question:
+              "74.Do you recognize that your symptoms or the avoidance of social situations are excessive or unreasonable?"),
+      Question(
+        title:
+            "Symptoms are restricted to or predominate in the feared situation or when thinking about it which could lead to Blushing,Fear of vomiting. Urgency or fear of micturition or defecation",
+        question:
+            "75.Do your symptoms predominate in social situations or when thinking about them, such as blushing, fear of vomiting, or urgency or fear of micturition or defecation?",
+      ),
+      //End of Social Anxiety
+    ],
+  );
+
+  final QuestionBrain ocdBrain = QuestionBrain(
+    questionBank: [
+      // Your question list here (avoiding code duplication)
+      Question(
+          title: "Obsessions or compulsions or both are time consuming",
+          question:
+              "76. Do your obsessions or compulsions consume a significant amount of time each day?"),
+      Question(
+          title: "Not influenced by drugs or medical conditions",
+          question:
+              "77. Are your obsessions or compulsions not influenced by drugs or medical conditions?"),
+      Question(
+          title: "Uncontrollable, obsessive thoughts.",
+          question:
+              "78. Do you experience uncontrollable, obsessive thoughts?"),
+      Question(
+        title: "Duration of 3 weeks.",
+        question: "79. Have these symptoms been present for at least 3 weeks?",
+      ),
+    ],
+  );
+
+  final QuestionBrain ptsdBrain = QuestionBrain(
+    questionBank: [
+      // Your question list here (avoiding code duplication)
+      Question(
+          title: "Traumatic Experience",
+          question:
+              "80. Have you experienced a traumatic event that you find difficult to forget or cope with?"),
+      Question(
+          title: "Avoiding the stressor (Avoidance Behavior)",
+          question:
+              "81. Do you avoid reminders or situations related to the traumatic event?"),
+      Question(
+          title: "Cognitive and Emotional Changes",
+          question:
+              "82. Have you noticed changes in your thinking or emotions since the traumatic event?"),
+      Question(
+        title: "Arousal Changes",
+        question:
+            "83. Is there a marked alteration in arousal and reactivity after the event has occurred (e.g., irritable and angry outbursts, reckless or self-destructive behavior, hypervigilance, problems with concentration), with two or more of these symptoms present?",
+      ),
+      Question(
+        title:
+            "Persistent remembering of the incident(Flashback), having dreams or nightmares.",
+        question:
+            "84. Do you have frequent flashbacks, dreams, or nightmares about the traumatic event?",
+      ),
+      Question(
+        title:
+            "Causes significant impairment in personal, family, social, educational, occupational, or other important areas of functioning.",
+        question:
+            "85. Has the trauma significantly impacted your personal, family, social, educational, or work life over the duration of a month?",
+      ),
+      Question(
+        title: "It causes impairment in functioning",
+        question:
+            "86. Do your PTSD symptoms cause significant impairment in your daily functioning?",
+      ),
+    ],
+  );
+
+
+final QuestionBrain gamblingBrain = QuestionBrain(
+    questionBank: [
+      // Your question list here (avoiding code duplication)
+      Question(
+        title: "Gambling Behaviour",
+        question: "87. Do you gamble ?",
+      ),
+      Question(
+          title:
+              "Persisent and recurring problematic gambling behaviour(Needing to gamble with increasing amounts of money to achieve excitement,Feeling restless or irritable when attempting to cut down or stop gambling.,Making repeated unsuccessful efforts to control, cut back, or stop gambling.,Being preoccupied with gambling, such as persistent thoughts of past experiences or planning future gambling ventures.,Gambling when feeling distressed, such as feeling helpless, guilty, anxious, or depressed.,Chasing losses by returning to gamble again to try to recoup money lost previously.,Lying to conceal the extent of involvement with gambling.Jeopardizing or losing significant relationships, jobs, educational, or career opportunities due to gambling.,Relying on others to provide money to alleviate desperate financial situations caused by gambling.)",
+          question:
+              "88. Do you experience persistent and recurring problems related to gambling, such as needing to gamble with increasing amounts, feeling irritable when trying to stop, making unsuccessful attempts to cut back, or having gambling-related issues in your life?"),
+      Question(
+          title: "Prioritization",
+          question:
+              "89. Do you prioritize gambling over other activities or responsibilities?"),
+      Question(
+        title: "Impaired control",
+        question:
+            "90. Do you have difficulty controlling or limiting your gambling behavior?",
+      ),
+      Question(
+        title:
+            "Continuation despite harm(Gambling despite financial, relationship, legal, or mental health problems)",
+        question:
+            "91. Do you continue to gamble despite experiencing financial, relationship, legal, or mental health problems as a result?",
+      ),
+    ],
+  );
+
+  final QuestionBrain substanceBrain = QuestionBrain(
+    questionBank: [
+      // Your question list here (avoiding code duplication)
+      Question(
+          title: "Use of illicit drugs or alcohol",
+          question: "92. Do you use illicit drugs or alcohol?"),
+      Question(
+          title: "Use of unprescribed medication",
+          question:
+              "93. Do you use medication that was not prescribed to you?"),
+      Question(
+          title: "Increase in dosage",
+          question: "94. Have you increased the dosage of substances you use?"),
+      Question(
+        title: "Uncontrollable desire to use drugs ",
+        question:
+            "95. Do you have an uncontrollable desire to use drugs or a strong addiction to them?",
+      ),
+      Question(
+        title: "Neglect of social activity",
+        question:
+            "96. Have you neglected social activities due to substance use?",
+      ),
+      Question(
+        title: "Use despite knowledge of harm",
+        question:
+            "97. Do you continue using substances despite knowing they cause harm?",
+      ),
+      Question(
+        title: "Withdrawal symptoms",
+        question:
+            "98. Do you experience withdrawal symptoms when you stop using substances?",
+      ),
+      Question(
+        title: "duration of 12 months",
+        question: "99. Has your substance use persisted for 12 months or more?",
+      ),
+    ],
+  );

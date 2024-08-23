@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:metal_health/utils/question_brain.dart';
+import 'package:metal_health/question_brain.dart';
 import 'package:metal_health/utils/radio_button.dart';
 import 'package:metal_health/question.dart';
 
 class DelusionalDisorder extends StatefulWidget {
-  const DelusionalDisorder({super.key});
+  final Function(Map<String, String>) onCompleted;
+
+  const DelusionalDisorder({super.key, required this.onCompleted});
 
   @override
   State<DelusionalDisorder> createState() => _DelusionalDisorderState();
 }
 
 class _DelusionalDisorderState extends State<DelusionalDisorder> {
+  final Map<String, String> responses = {}; // String to String
   final QuestionBrain delusionalBrain = QuestionBrain(
     questionBank: [
       // Your question list here (avoiding code duplication)
@@ -46,31 +49,48 @@ class _DelusionalDisorderState extends State<DelusionalDisorder> {
       ),
     ],
   );
+
+  @override
+  void initState() {
+    super.initState();
+    // Set default responses to "No"
+    for (var question in delusionalBrain.questionBank) {
+      responses[question.title] = "0";
+    }
+  }
+
+  void _submitResponses() {
+    widget.onCompleted(responses);
+    Navigator.of(context).pop();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Delusional Disorder Diagnosis',
-            style: TextStyle(color: Colors.black),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.grey.shade200,
-        ),
-        body: ListView.builder(
-          itemCount: delusionalBrain.questionCount(),
-          itemBuilder: (context, index) => RadioButton(
-            bigTitle: delusionalBrain.questionBank[index].title,
-            question: delusionalBrain.questionBank[index].question,
-          ),
-        ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        // floatingActionButton: ElevatedButton(
-        //   onPressed: () {},
-        //   child: Text('Submit'),
-        // ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Depression Diagnosis'),
+        centerTitle: true,
+        backgroundColor: Colors.grey.shade200,
+      ),
+      body: ListView.builder(
+        itemCount: delusionalBrain.questionCount(),
+        itemBuilder: (context, index) {
+          final question = delusionalBrain.questionBank[index];
+          return RadioButton(
+            bigTitle: question.title,
+            question: question.question,
+            initialValue: responses[question.title]!,
+            onChanged: (String title, String value) {
+              setState(() {
+                responses[title] = value;
+              });
+            },
+          );
+        },
+      ),
+      floatingActionButton: ElevatedButton(
+        onPressed: _submitResponses,
+        child: const Text('Submit'),
       ),
     );
   }

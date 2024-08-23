@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:metal_health/utils/question_brain.dart';
+import 'package:metal_health/question_brain.dart';
 import 'package:metal_health/utils/radio_button.dart';
 import 'package:metal_health/question.dart';
 
 class SubstanceUseAndAbuse extends StatefulWidget {
-  const SubstanceUseAndAbuse({super.key});
+  final Function(Map<String, String>) onCompleted;
+
+  const SubstanceUseAndAbuse({super.key, required this.onCompleted});
 
   @override
   State<SubstanceUseAndAbuse> createState() => _SubstanceUseAndAbuseState();
 }
 
 class _SubstanceUseAndAbuseState extends State<SubstanceUseAndAbuse> {
-  final QuestionBrain ptsd = QuestionBrain(
+  final Map<String, String> responses = {}; // String to String
+  final QuestionBrain substanceBrain = QuestionBrain(
     questionBank: [
       // Your question list here (avoiding code duplication)
       Question(
@@ -52,30 +55,50 @@ class _SubstanceUseAndAbuseState extends State<SubstanceUseAndAbuse> {
   );
 
   @override
+  void initState() {
+    super.initState();
+    // Set default responses to "No" -> "0" as String
+    for (var question in substanceBrain.questionBank) {
+      responses[question.title] = "0";
+    }
+  }
+
+  void _submitResponses() {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('Button Pressed')));
+
+    widget.onCompleted(responses);
+    Navigator.of(context).pop();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Substance Use and Abuse Diagnosis',
-            style: TextStyle(color: Colors.black),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.grey.shade200,
-        ),
-        body: ListView.builder(
-          itemCount: ptsd.questionCount(),
-          itemBuilder: (context, index) => RadioButton(
-            bigTitle: ptsd.questionBank[index].title,
-            question: ptsd.questionBank[index].question,
-          ),
-        ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        // floatingActionButton: ElevatedButton(
-        //   onPressed: () {},
-        //   child: Text('Submit'),
-        // ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Substance Abuse Diagnosis'),
+        centerTitle: true,
+        backgroundColor: Colors.grey.shade200,
+      ),
+      body: ListView.builder(
+        itemCount: substanceBrain.questionCount(),
+        itemBuilder: (context, index) {
+          final question = substanceBrain.questionBank[index];
+          return RadioButton(
+            bigTitle: question.title,
+            question: question.question,
+            initialValue:
+                responses[question.title]!, // Ensure string value is passed
+            onChanged: (String title, String value) {
+              setState(() {
+                responses[title] = value;
+              });
+            },
+          );
+        },
+      ),
+      floatingActionButton: ElevatedButton(
+        onPressed: _submitResponses,
+        child: const Text('Submit'),
       ),
     );
   }

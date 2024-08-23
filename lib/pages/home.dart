@@ -11,7 +11,7 @@ class Home extends StatefulWidget {
 int _currentIndex = 0;
 List<Widget> pages = [
   const HomePage(),
-  const Questionnaire(),
+  Questionnaire(),
   const MyFormPage(),
   Analysis(),
   const AppSettings(),

@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:metal_health/utils/question_brain.dart';
+import 'package:metal_health/question_brain.dart';
 import 'package:metal_health/utils/radio_button.dart';
 import 'package:metal_health/question.dart';
 
 class PTSD extends StatefulWidget {
-  const PTSD({super.key});
+  final Function(Map<String, String>) onCompleted;
+
+  const PTSD({super.key, required this.onCompleted});
 
   @override
   State<PTSD> createState() => _PTSDState();
 }
 
 class _PTSDState extends State<PTSD> {
-  final QuestionBrain ptsd = QuestionBrain(
+  final Map<String, String> responses = {}; // String to String
+  final QuestionBrain ptsdBrain = QuestionBrain(
     questionBank: [
       // Your question list here (avoiding code duplication)
       Question(
@@ -52,30 +55,50 @@ class _PTSDState extends State<PTSD> {
   );
 
   @override
+  void initState() {
+    super.initState();
+    // Set default responses to "No" -> "0" as String
+    for (var question in ptsdBrain.questionBank) {
+      responses[question.title] = "0";
+    }
+  }
+
+  void _submitResponses() {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('Button Pressed')));
+
+    widget.onCompleted(responses);
+    Navigator.of(context).pop();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Depression Diagnosis',
-            style: TextStyle(color: Colors.black),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.grey.shade200,
-        ),
-        body: ListView.builder(
-          itemCount: ptsd.questionCount(),
-          itemBuilder: (context, index) => RadioButton(
-            bigTitle: ptsd.questionBank[index].title,
-            question: ptsd.questionBank[index].question,
-          ),
-        ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        // floatingActionButton: ElevatedButton(
-        //   onPressed: () {},
-        //   child: Text('Submit'),
-        // ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('OCD Diagnosis'),
+        centerTitle: true,
+        backgroundColor: Colors.grey.shade200,
+      ),
+      body: ListView.builder(
+        itemCount: ptsdBrain.questionCount(),
+        itemBuilder: (context, index) {
+          final question = ptsdBrain.questionBank[index];
+          return RadioButton(
+            bigTitle: question.title,
+            question: question.question,
+            initialValue:
+                responses[question.title]!, // Ensure string value is passed
+            onChanged: (String title, String value) {
+              setState(() {
+                responses[title] = value;
+              });
+            },
+          );
+        },
+      ),
+      floatingActionButton: ElevatedButton(
+        onPressed: _submitResponses,
+        child: const Text('Submit'),
       ),
     );
   }

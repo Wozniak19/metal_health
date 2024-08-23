@@ -46,7 +46,6 @@ class _MentalHealthState extends State<MentalHealth> {
         '/patientpage': (context) => MyFormPage(),
         '/analysispage': (context) => Analysis(),
         '/settingspage': (context) => AppSettings(),
-        '/depressionpage': (context) => Depression(),
       },
       theme: ThemeData(primarySwatch: Colors.deepPurple),
     );
