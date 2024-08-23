@@ -15,7 +15,7 @@ class _DepressionState extends State<Depression> {
     questionBank: [
       // Your question list here (avoiding code duplication)
       Question(
-          title: "Depressive moo",
+          title: "Depressive mood",
           question:
               "1. Have you been feeling consistently sad, down, or hopeless?"),
       Question(
