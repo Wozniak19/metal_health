@@ -12,7 +12,7 @@ class Questionnaire extends StatefulWidget {
 }
 
 class _QuestionnaireState extends State<Questionnaire> {
-  final Map<String, Map<String, String>> allResponses = {}; // String to String
+  final Map<String, String> allResponses = {}; // String to String
   bool _isLoading = false;
 
   void _submitAllResponses() async {
@@ -22,11 +22,14 @@ class _QuestionnaireState extends State<Questionnaire> {
 
     try {
       final url = Uri.parse('https://host-rr98.onrender.com/classify');
+
       final response = await http.post(
         url,
         headers: {'Content-Type': 'application/json'},
+
         body: json.encode(allResponses), // Send responses as JSON
       );
+      print(response);
 
       if (response.statusCode == 200) {
         final result = json.decode(response.body);
@@ -85,34 +88,64 @@ class _QuestionnaireState extends State<Questionnaire> {
 
     final List<Widget Function()> destinationPages = [
       () => Depression(onCompleted: (responses) {
-            allResponses['Depression'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
       () => Schizophrenia(onCompleted: (responses) {
-            allResponses['Schizophrenia'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
       () => AcuteTransient(onCompleted: (responses) {
-            allResponses['Acute and transient disorder'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
       () => DelusionalDisorder(onCompleted: (responses) {
-            allResponses['Delusional Disorder'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
       () => Bipolar(onCompleted: (responses) {
-            allResponses['Bipolar disorder'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
       () => Anxiety(onCompleted: (responses) {
-            allResponses['Anxiety'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
       () => OCD(onCompleted: (responses) {
-            allResponses['OCD'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
       () => PTSD(onCompleted: (responses) {
-            allResponses['PTSD'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
       () => Gambling(onCompleted: (responses) {
-            allResponses['Gambling Disorder'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
       () => SubstanceUseAndAbuse(onCompleted: (responses) {
-            allResponses['Substance Use And Abuse'] = responses;
+            print(responses);
+            print(responses.length);
+            allResponses.addAll(responses);
+            print(allResponses.length);
           }),
     ];
 

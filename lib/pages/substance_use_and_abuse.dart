@@ -51,6 +51,14 @@ class _SubstanceUseAndAbuseState extends State<SubstanceUseAndAbuse> {
         title: "duration of 12 months",
         question: "99. Has your substance use persisted for 12 months or more?",
       ),
+      Question(
+        title: "AGE",
+        question: "100. Are you oldet than 40 years?",
+      ),
+      Question(
+        title: "SEX",
+        question: "101.Are you a male?",
+      ),
     ],
   );
 
@@ -66,7 +74,8 @@ class _SubstanceUseAndAbuseState extends State<SubstanceUseAndAbuse> {
   void _submitResponses() {
     ScaffoldMessenger.of(context)
         .showSnackBar(const SnackBar(content: Text('Button Pressed')));
-
+    print("MHD:");
+    print(responses.length);
     widget.onCompleted(responses);
     Navigator.of(context).pop();
   }

@@ -70,7 +70,8 @@ class _SchizophreniaState extends State<Schizophrenia> {
   void _submitResponses() {
     ScaffoldMessenger.of(context)
         .showSnackBar(const SnackBar(content: Text('Button Pressed')));
-
+    print("MHD:");
+    print(responses.length);
     widget.onCompleted(responses);
     Navigator.of(context).pop();
   }

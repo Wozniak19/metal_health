@@ -22,7 +22,7 @@ class _OCDState extends State<OCD> {
             "76. Do your obsessions or compulsions consume a significant amount of time each day?",
       ),
       Question(
-        title: "Not influenced by drugs or medical conditions",
+        title: "Not influenced by drugs or medical condition(s)",
         question:
             "77. Are your obsessions or compulsions not influenced by drugs or medical conditions?",
       ),
@@ -49,7 +49,8 @@ class _OCDState extends State<OCD> {
   void _submitResponses() {
     ScaffoldMessenger.of(context)
         .showSnackBar(const SnackBar(content: Text('Button Pressed')));
-
+    print("MHD:");
+    print(responses.length);
     widget.onCompleted(responses);
     Navigator.of(context).pop();
   }

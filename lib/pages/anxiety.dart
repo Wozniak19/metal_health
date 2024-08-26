@@ -185,6 +185,8 @@ class _AnxietyState extends State<Anxiety> {
 
   void _submitResponses() {
     widget.onCompleted(responses);
+    print("MHD:");
+    print(responses.length);
     Navigator.of(context).pop();
   }
 
