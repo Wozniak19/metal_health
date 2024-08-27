@@ -39,8 +39,8 @@ class _RadioButtonState extends State<RadioButton> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                widget.bigTitle,
-                overflow: TextOverflow.ellipsis,
+                widget.bigTitle.toUpperCase(),
+                overflow: TextOverflow.visible,
                 maxLines: null,
                 softWrap: true,
                 style: const TextStyle(

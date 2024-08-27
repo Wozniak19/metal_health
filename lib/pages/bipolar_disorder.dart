@@ -83,8 +83,6 @@ class _BipolarState extends State<Bipolar> {
 
   void _submitResponses() {
     widget.onCompleted(responses);
-    print("MHD:");
-    print(responses.length);
     Navigator.of(context).pop();
   }
 
@@ -92,8 +90,12 @@ class _BipolarState extends State<Bipolar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bipolar Diagnosis'),
+        title: const Text(
+          'Bipolar Disorder Diagnosis',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.grey.shade200,
       ),
       body: ListView.builder(

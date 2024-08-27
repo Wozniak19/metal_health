@@ -43,11 +43,11 @@ class _SchizophreniaState extends State<Schizophrenia> {
           question:
               "19. Do you find yourself lacking motivation, struggling to express emotions, or feeling less pleasure in activities you once enjoyed?"),
       Question(
-          title: "family history",
+          title: "Family history",
           question:
               "20. Is there a history of schizophrenia or similar mental health conditions in your family?"),
       Question(
-          title: "neurological soft signs",
+          title: "Neurological soft signs",
           question:
               "21. Have you noticed subtle motor or sensory changes, such as awkwardness or difficulties with coordination?"),
       Question(
@@ -68,10 +68,6 @@ class _SchizophreniaState extends State<Schizophrenia> {
   }
 
   void _submitResponses() {
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('Button Pressed')));
-    print("MHD:");
-    print(responses.length);
     widget.onCompleted(responses);
     Navigator.of(context).pop();
   }
@@ -80,8 +76,12 @@ class _SchizophreniaState extends State<Schizophrenia> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Schizophrenia Diagnosis'),
+        title: const Text(
+          'Schizophrenia Diagnosis',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.grey.shade200,
       ),
       body: ListView.builder(

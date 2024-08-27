@@ -21,3 +21,4 @@ export 'auth.dart';
 export 'splash.dart';
 export 'home.dart';
 export 'formpage.dart';
+export 'sadperson.dart';

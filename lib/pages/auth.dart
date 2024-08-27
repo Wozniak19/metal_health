@@ -35,7 +35,8 @@ class _AuthScreenState extends State<AuthScreen> {
         final userCredentials = await _firebase.createUserWithEmailAndPassword(
             email: _enteredEmail, password: _enteredPassword);
 
-        final username = "${_enteredFirstName[0].toUpperCase()}.${_enteredLastName[0].toUpperCase()}${_enteredLastName.substring(1).toLowerCase()}";
+        final username =
+            "${_enteredFirstName[0].toUpperCase()}.${_enteredLastName[0].toUpperCase()}${_enteredLastName.substring(1).toLowerCase()}";
 
         await FirebaseFirestore.instance
             .collection('users')
@@ -91,38 +92,40 @@ class _AuthScreenState extends State<AuthScreen> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          TextFormField(
-                            decoration:
-                                const InputDecoration(labelText: 'First Name'),
-                            keyboardType: TextInputType.name,
-                            autocorrect: false,
-                            textCapitalization: TextCapitalization.words,
-                            validator: (value) {
-                              if (value == null || value.trim().isEmpty) {
-                                return 'Please enter a first name.';
-                              }
-                              return null;
-                            },
-                            onSaved: (value) {
-                              _enteredFirstName = value!;
-                            },
-                          ),
-                          TextFormField(
-                            decoration:
-                                const InputDecoration(labelText: 'Last Name'),
-                            keyboardType: TextInputType.name,
-                            autocorrect: false,
-                            textCapitalization: TextCapitalization.words,
-                            validator: (value) {
-                              if (value == null || value.trim().isEmpty) {
-                                return 'Please enter a last name.';
-                              }
-                              return null;
-                            },
-                            onSaved: (value) {
-                              _enteredLastName = value!;
-                            },
-                          ),
+                          if (!_isLogin)
+                            TextFormField(
+                              decoration: const InputDecoration(
+                                  labelText: 'First Name'),
+                              keyboardType: TextInputType.name,
+                              autocorrect: false,
+                              textCapitalization: TextCapitalization.words,
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'Please enter a first name.';
+                                }
+                                return null;
+                              },
+                              onSaved: (value) {
+                                _enteredFirstName = value!;
+                              },
+                            ),
+                          if (!_isLogin)
+                            TextFormField(
+                              decoration:
+                                  const InputDecoration(labelText: 'Last Name'),
+                              keyboardType: TextInputType.name,
+                              autocorrect: false,
+                              textCapitalization: TextCapitalization.words,
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'Please enter a last name.';
+                                }
+                                return null;
+                              },
+                              onSaved: (value) {
+                                _enteredLastName = value!;
+                              },
+                            ),
                           TextFormField(
                             decoration: const InputDecoration(
                                 labelText: 'Email Address'),

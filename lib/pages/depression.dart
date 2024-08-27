@@ -5,8 +5,14 @@ import 'package:metal_health/question.dart';
 
 class Depression extends StatefulWidget {
   final Function(Map<String, String>) onCompleted;
+  final Function(bool)
+      onSuicidalThoughtsChecked; // Callback for suicidal thoughts
 
-  const Depression({super.key, required this.onCompleted});
+  const Depression({
+    super.key,
+    required this.onCompleted,
+    required this.onSuicidalThoughtsChecked,
+  });
 
   @override
   State<Depression> createState() => _DepressionState();
@@ -79,10 +85,8 @@ class _DepressionState extends State<Depression> {
   }
 
   void _submitResponses() {
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('Button Pressed')));
-    print("MHD:");
-    print(responses.length);
+    final hasSuicidalThoughts = responses["Suicidal thoughts"] == "1";
+    widget.onSuicidalThoughtsChecked(hasSuicidalThoughts);
 
     widget.onCompleted(responses);
     Navigator.of(context).pop();
@@ -92,8 +96,12 @@ class _DepressionState extends State<Depression> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Depression Diagnosis'),
+        title: const Text(
+          'Depression Diagnosis',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.grey.shade200,
       ),
       body: ListView.builder(

@@ -16,7 +16,7 @@ class Analysis extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.grey.shade200,
           title: Text(
-            'Analysis Page',
+            'MHDs Analysis',
             style: TextStyle(color: Colors.black),
           ),
         ),

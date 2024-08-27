@@ -185,8 +185,6 @@ class _AnxietyState extends State<Anxiety> {
 
   void _submitResponses() {
     widget.onCompleted(responses);
-    print("MHD:");
-    print(responses.length);
     Navigator.of(context).pop();
   }
 
@@ -194,8 +192,12 @@ class _AnxietyState extends State<Anxiety> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Anxiety Diagnosis'),
+        title: const Text(
+          'Anxiety Diagnosis',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.grey.shade200,
       ),
       body: ListView.builder(

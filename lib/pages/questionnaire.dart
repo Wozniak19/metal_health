@@ -14,6 +14,7 @@ class Questionnaire extends StatefulWidget {
 class _QuestionnaireState extends State<Questionnaire> {
   final Map<String, String> allResponses = {}; // String to String
   bool _isLoading = false;
+  bool _hasSuicidalThoughts = false;
 
   void _submitAllResponses() async {
     setState(() {
@@ -29,14 +30,15 @@ class _QuestionnaireState extends State<Questionnaire> {
 
         body: json.encode(allResponses), // Send responses as JSON
       );
-      print(response);
 
       if (response.statusCode == 200) {
-        final result = json.decode(response.body);
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Results(result: result),
+            builder: (context) => Results(
+              result: json.decode(response.body),
+              showSadPersonScale: _hasSuicidalThoughts,
+            ),
           ),
         );
       } else {
@@ -87,65 +89,40 @@ class _QuestionnaireState extends State<Questionnaire> {
     ];
 
     final List<Widget Function()> destinationPages = [
-      () => Depression(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
-            allResponses.addAll(responses);
-            print(allResponses.length);
-          }),
+      () => Depression(
+            onCompleted: (responses) {
+              allResponses.addAll(responses);
+            },
+            onSuicidalThoughtsChecked: (hasSuicidalThoughts) {
+              _hasSuicidalThoughts = hasSuicidalThoughts;
+            },
+          ),
       () => Schizophrenia(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
             allResponses.addAll(responses);
-            print(allResponses.length);
           }),
       () => AcuteTransient(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
             allResponses.addAll(responses);
-            print(allResponses.length);
           }),
       () => DelusionalDisorder(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
             allResponses.addAll(responses);
-            print(allResponses.length);
           }),
       () => Bipolar(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
             allResponses.addAll(responses);
-            print(allResponses.length);
           }),
       () => Anxiety(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
             allResponses.addAll(responses);
-            print(allResponses.length);
           }),
       () => OCD(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
             allResponses.addAll(responses);
-            print(allResponses.length);
           }),
       () => PTSD(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
             allResponses.addAll(responses);
-            print(allResponses.length);
           }),
       () => Gambling(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
             allResponses.addAll(responses);
-            print(allResponses.length);
           }),
       () => SubstanceUseAndAbuse(onCompleted: (responses) {
-            print(responses);
-            print(responses.length);
             allResponses.addAll(responses);
-            print(allResponses.length);
           }),
     ];
 

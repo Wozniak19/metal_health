@@ -72,10 +72,6 @@ class _SubstanceUseAndAbuseState extends State<SubstanceUseAndAbuse> {
   }
 
   void _submitResponses() {
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('Button Pressed')));
-    print("MHD:");
-    print(responses.length);
     widget.onCompleted(responses);
     Navigator.of(context).pop();
   }
@@ -84,8 +80,12 @@ class _SubstanceUseAndAbuseState extends State<SubstanceUseAndAbuse> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Substance Abuse Diagnosis'),
+        title: const Text(
+          'Substance Use & Abuse',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.grey.shade200,
       ),
       body: ListView.builder(

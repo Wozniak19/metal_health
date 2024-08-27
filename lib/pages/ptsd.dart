@@ -64,10 +64,6 @@ class _PTSDState extends State<PTSD> {
   }
 
   void _submitResponses() {
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('Button Pressed')));
-    print("MHD:");
-    print(responses.length);
     widget.onCompleted(responses);
     Navigator.of(context).pop();
   }
@@ -76,8 +72,12 @@ class _PTSDState extends State<PTSD> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('OCD Diagnosis'),
+        title: const Text(
+          'PTSD Diagnosis',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.grey.shade200,
       ),
       body: ListView.builder(

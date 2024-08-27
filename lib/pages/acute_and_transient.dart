@@ -56,10 +56,6 @@ class _AcuteTransientState extends State<AcuteTransient> {
   }
 
   void _submitResponses() {
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('Button Pressed')));
-    print("MHD:");
-    print(responses.length);
     widget.onCompleted(responses);
     Navigator.of(context).pop();
   }
@@ -68,8 +64,12 @@ class _AcuteTransientState extends State<AcuteTransient> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Acute Diagnosis'),
+        title: const Text(
+          'Acute & Transient Diagnosis',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.grey.shade200,
       ),
       body: ListView.builder(
