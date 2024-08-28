@@ -30,6 +30,13 @@ class _DashState extends State<Dash> {
   String? _username;
   bool _isLoading = true;
 
+  final Map<String, double> mhdData = {
+    "Depression": 0.70,
+    "Schizophrenia": 0.20,
+    "Social_Anxiety": 0.30,
+    "Substance_Abuse": 0.91,
+    "Others": 0.10,
+  };
   @override
   void initState() {
     super.initState();
@@ -181,7 +188,8 @@ class _DashState extends State<Dash> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Report(),
+                              builder: (context) =>
+                                  MhdPieChart(dataMap: mhdData),
                             ),
                           );
                         });
